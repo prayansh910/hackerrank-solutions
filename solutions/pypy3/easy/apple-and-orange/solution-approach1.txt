@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-06, 11:22 p.m.
+# Technique   single-loop-range-check
+# Time        O(max(m, n))
+# Space       O(1)
+# Insight     The algorithm iterates through the maximum length of the two fruit arrays, checking if the sum of the tree position and fruit distance falls within the inclusive range [s, t].
+# Interview   Before: "I would iterate through each list separately to count the fruits." After: "I used a single loop up to the maximum length of both arrays to achieve O(max(m, n)) time complexity, ensuring each fruit's landing position is checked against the inclusive range [s, t]."
+# Pitfalls    (1) The range(s, t+1) function is required to correctly include the endpoint t in the inclusive range [s, t].  (2) The loop must handle cases where the number of apples and oranges differ by using the maximum length of both arrays.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
