@@ -1,0 +1,51 @@
+# ──────────────────────────────────────────────────
+# Link        https://www.hackerrank.com/challenges/time-conversion/problem?isFullScreen=true
+# Problem     Time Conversion
+# Difficulty  Easy
+# Subdomain   Warmup
+# Platform    HackerRank
+# Language    pypy3
+# Status      Accepted
+# Submitted   2026-10-06, 10:28 p.m.
+# ──────────────────────────────────────────────────
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'timeConversion' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+
+def timeConversion(s):
+    s.strip()
+    hour=s[0:2]
+    ampm=s[-2:]
+    
+    if ampm=="AM":
+        if hour=="12":
+            hour="00" 
+        
+    elif ampm=="PM":
+        if hour!="12":
+            hour=str(int(hour)+12)
+    return f"{hour}{s[2:-2]}"           
+    
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
