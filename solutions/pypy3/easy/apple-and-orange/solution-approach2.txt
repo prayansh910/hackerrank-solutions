@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-07, 03:01 a.m.
+# Technique   single-loop-array-traversal
+# Time        O(max(m, n))
+# Space       O(1)
+# Insight     The algorithm iterates through the maximum length of the two fruit arrays, checking if each fruit's landing position, calculated by adding its distance to the respective tree's coordinate, falls within the inclusive range [s, t].
+# Interview   Before: "I will iterate through both arrays separately to count the fruits." After: "I can optimize by using a single loop up to the maximum length of both arrays, achieving O(max(m, n)) time complexity while correctly handling the inclusive range [s, t] for both apple and orange positions."
+# Pitfalls    (1) Failing to use the inclusive range [s, t] by using strict inequalities instead of s <= position <= t.  (2) Incorrectly calculating the landing position by forgetting to add the tree's base coordinate (a or b) to the fruit's distance.  (3) Assuming both fruit arrays have the same length, which leads to index out of bounds errors if not guarded by i < m and i < n.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
