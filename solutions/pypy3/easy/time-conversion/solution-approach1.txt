@@ -7,6 +7,11 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-06, 10:28 p.m.
+# Technique   string-slicing-conditional-logic
+# Time        O(1)
+# Space       O(1)
+# Insight     The algorithm extracts the hour and meridian components, applying modular arithmetic logic to convert 12-hour format to 24-hour format while preserving the remaining time string.
+# Pitfalls    (1) Failing to handle the 12AM case where the hour must be converted to 00.  (2) Incorrectly adding 12 to the hour for 12PM, which should remain 12.  (3) Miscalculating string slice indices when extracting the middle time components.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
