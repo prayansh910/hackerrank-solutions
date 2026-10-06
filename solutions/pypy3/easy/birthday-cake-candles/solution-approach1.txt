@@ -6,13 +6,7 @@
 # Platform    HackerRank
 # Language    pypy3
 # Status      Accepted
-# Submitted   2026-10-06, 07:07 p.m.
-# Technique   single-pass-max-tracking
-# Time        O(n)
-# Space       O(1)
-# Insight     The algorithm maintains the current maximum height and its frequency in a single pass, resetting the count whenever a strictly greater height is encountered.
-# Interview   Before: "I could sort the array to find the max and count it." After: "Sorting takes O(n log n), but a single-pass O(n) approach is more efficient. By tracking the max height and count simultaneously, we handle the O(n) time and O(1) space requirements optimally."
-# Pitfalls    (1) Initializing maxheight to 0 is safe here because candle heights are positive integers, but it would fail if the input contained negative values.  (2) Failing to reset the count to 1 when a new maximum is found results in an incorrect frequency count.
+# Submitted   2026-10-06, 07:08 p.m.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
