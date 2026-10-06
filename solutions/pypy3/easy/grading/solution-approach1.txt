@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-06, 10:53 p.m.
+# Technique   in-place-array-modification
+# Time        O(n)
+# Space       O(1)
+# Insight     The algorithm iterates through the grades and applies the rounding rule only if the grade is at least 38 and the difference to the next multiple of 5 is strictly less than 3.
+# Interview   Before: "How would you handle the rounding logic for each student?" After: "I iterate through the array in O(n) time, checking if the grade is at least 38 and if the remainder relative to 5 is less than 3, which ensures we only round up when the difference is 1 or 2."
+# Pitfalls    (1) Failing to check the grade threshold of 38, which causes grades below 40 to be rounded incorrectly.  (2) Rounding grades where the difference to the next multiple of 5 is exactly 3, violating the rule that the difference must be less than 3.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
