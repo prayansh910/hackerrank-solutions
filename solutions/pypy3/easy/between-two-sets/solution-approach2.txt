@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-13, 01:32 a.m.
+# Technique   lcm-gcd-range-scan
+# Time        O(N + M + (bmin/amax))
+# Space       O(1)
+# Insight     The solution identifies valid integers by checking multiples of the least common multiple of array a that are also divisors of the greatest common divisor of array b.
+# Interview   Before: "I could iterate through all numbers from 1 to 100 and check every element in both arrays." After: "That is inefficient. Instead, I calculate the LCM of array a and the GCD of array b, then scan the range between them in O(N+M+K) time, where K is the range size."
+# Pitfalls    (1) Failing to account for the range upper bound being inclusive, which requires range(amax, bmin + 1).  (2) Assuming the range is empty if the LCM of a exceeds the GCD of b, which the loop handles correctly by not executing.  (3) Neglecting that the integer must be a multiple of the LCM of a and a divisor of the GCD of b.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
