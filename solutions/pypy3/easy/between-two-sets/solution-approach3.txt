@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-13, 01:41 a.m.
+# Technique   lcm-gcd-range-scan
+# Time        O(n + m + (bmin/amax))
+# Space       O(1)
+# Insight     The algorithm identifies integers that are multiples of the least common multiple of array a and divisors of the greatest common divisor of array b.
+# Interview   Before: "I would iterate through all numbers between the min and max of the arrays and check divisibility." After: "I optimized this to O(n + m + (bmin/amax)) by using LCM and GCD to narrow the search space to only valid candidates, ensuring efficiency even for larger constraints."
+# Pitfalls    (1) Failing to account for the case where the LCM of array a exceeds the GCD of array b, resulting in an empty range.  (2) Assuming the range must start from 1 instead of the LCM of array a, which is the smallest possible candidate.  (3) Incorrectly using a step size of 1 in the loop instead of the LCM of array a, which significantly increases the number of iterations.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
