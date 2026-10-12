@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-13, 01:54 a.m.
+# Technique   linear-scan-tracking-extremes
+# Time        O(n)
+# Space       O(1)
+# Insight     The algorithm maintains the current minimum and maximum scores observed so far, incrementing the respective counters only when a score strictly exceeds or falls below these established bounds.
+# Interview   Before: "I will sort the array to find the min and max." After: "Sorting is unnecessary; a single O(n) linear scan tracking the current min and max is sufficient to count record breaks, even when the first game establishes the initial baseline."
+# Pitfalls    (1) Failing to initialize min and max with the first game score, which incorrectly treats the first game as a record break.  (2) Using non-strict inequality operators (>= or <=) instead of strict ones, which incorrectly counts games where the score merely matches the existing record.  (3) Assuming the input array is empty, though the problem constraints imply at least one game is played.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
