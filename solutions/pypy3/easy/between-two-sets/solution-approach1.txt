@@ -7,12 +7,6 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-13, 01:28 a.m.
-# Technique   lcm-gcd-range-filtering
-# Time        O(n + m + (bmin/amax))
-# Space       O(bmin/amax)
-# Insight     The algorithm identifies integers that are multiples of the least common multiple of array a and divisors of the greatest common divisor of array b.
-# Interview   Before: "I would iterate through all numbers between the arrays and check divisibility for every element." After: "By calculating the LCM of array a and the GCD of array b, I reduce the search space to multiples of the LCM, achieving O(n + m + (bmin/amax)) time complexity."
-# Pitfalls    (1) Failing to account for the range constraint where the candidate integer must be a multiple of the LCM of array a.  (2) Assuming the candidate integer must be within the range of the minimum of array a and the maximum of array b instead of the LCM and GCD bounds.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
