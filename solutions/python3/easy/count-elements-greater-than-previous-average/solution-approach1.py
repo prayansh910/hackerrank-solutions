@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-10-14, 01:51 a.m.
+# Technique   running-sum-average-comparison
+# Time        O(n)
+# Space       O(1)
+# Insight     The algorithm maintains a running sum to calculate the average of all elements up to the current index, comparing each element against its preceding average to determine if it exceeds that value.
+# Interview   Before: "I would calculate the average for every prefix by iterating through the array repeatedly." After: "I optimized this to O(n) time by maintaining a running sum, which allows constant-time average calculation at each step, correctly handling the empty array case where n=0 results in zero counts."
+# Pitfalls    (1) The problem requires skipping the first element, but the provided code incorrectly includes the first element in the comparison logic.  (2) Using integer division (//) instead of floating-point division may lead to incorrect comparisons if the average is not an integer.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
