@@ -7,6 +7,11 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-10-14, 02:05 a.m.
+# Technique   running-sum-average-tracking
+# Time        O(n)
+# Space       O(1)
+# Insight     The algorithm maintains a running sum of all elements encountered so far to calculate the average of previous elements in constant time for each subsequent index.
+# Pitfalls    (1) Failing to handle the n=0 case where the loop range is empty, resulting in an incorrect return value of 0.  (2) Using integer division instead of floating-point division when calculating the average, which would lead to incorrect comparisons for non-integer averages.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
