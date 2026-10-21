@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-22, 04:12 a.m.
+# Technique   frequency-array-index-lookup
+# Time        O(n)
+# Space       O(m)
+# Insight     The code leverages the property that list.index returns the first occurrence of the maximum frequency, which naturally satisfies the requirement to return the smallest bird type ID in case of ties.
+# Interview   Before: "I could sort the array and count frequencies." After: "Sorting would take O(n log n), but using a frequency array allows us to solve this in O(n) time and O(m) space, where m is the maximum bird ID, by finding the first index with the maximum count."
+# Pitfalls    (1) The code assumes bird IDs are non-negative integers, which is consistent with the problem constraints.  (2) Using max(arr) to size the frequency array is efficient here, but could cause memory issues if bird IDs were extremely large sparse values.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
