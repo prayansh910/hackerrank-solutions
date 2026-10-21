@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-22, 04:22 a.m.
+# Technique   range-loop-end-parameter
+# Time        O(n)
+# Space       O(1)
+# Insight     The implementation iterates from zero to n-1, printing each incremented index without a trailing newline to concatenate the sequence.
+# Interview   Before: "How would you print a sequence of numbers as a single string without using string methods?" After: "By using the print function's end parameter set to an empty string, we can achieve O(n) time and O(1) space complexity by printing each integer sequentially."
+# Pitfalls    (1) Using the default print end parameter adds a newline character after every integer, violating the requirement to print as a single string.  (2) Using range(n+1) instead of range(n) causes the loop to print an extra integer, resulting in an incorrect sequence ending in n+1.
 # ──────────────────────────────────────────────────
 
 if __name__ == '__main__':
