@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-22, 04:13 a.m.
+# Technique   range-based-iteration
+# Time        O(n)
+# Space       O(1)
+# Insight     The code iterates through all non-negative integers i strictly less than n and prints the square of each value.
+# Interview   Before: "I need to print squares up to n." After: "I use a range loop to iterate from 0 to n-1, ensuring O(n) time complexity and O(1) space, which correctly handles the constraint i < n."
+# Pitfalls    (1) Using range(n + 1) instead of range(n) would violate the constraint that i must be strictly less than n.  (2) Failing to handle the input as an integer would cause a type error during the multiplication operation.
 # ──────────────────────────────────────────────────
 
 if __name__ == '__main__':
