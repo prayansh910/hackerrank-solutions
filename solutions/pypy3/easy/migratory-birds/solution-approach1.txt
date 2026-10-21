@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-22, 04:11 a.m.
+# Technique   frequency-array-index-lookup
+# Time        O(n)
+# Space       O(m)
+# Insight     The algorithm counts occurrences of each bird type in a frequency array and returns the smallest index corresponding to the maximum frequency value.
+# Interview   Before: "I could sort the array and count consecutive elements." After: "Using a frequency array is more efficient at O(n) time and O(m) space, where m is the maximum bird type ID, ensuring we correctly identify the smallest ID for the maximum frequency."
+# Pitfalls    (1) The code assumes bird type IDs are non-negative integers, which is consistent with the problem constraints.  (2) Using max(arr) to size the frequency array is efficient here because the range of bird types is small and fixed.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
