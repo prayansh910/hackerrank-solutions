@@ -6,13 +6,7 @@
 # Platform    HackerRank
 # Language    pypy3
 # Status      Accepted
-# Submitted   2026-10-23, 01:51 a.m.
-# Technique   nested-list-comprehension
-# Time        O(x * y * z)
-# Space       O(x * y * z)
-# Insight     The implementation generates all coordinate triplets within the inclusive bounds [0, x], [0, y], and [0, z] using nested iteration, filtering out those whose sum equals n.
-# Interview   Before: "I would use three nested for-loops to build the list." After: "Using a list comprehension is more idiomatic in Python, achieving the same O(x*y*z) time complexity while ensuring all coordinates within the inclusive range [0, x], [0, y], [0, z] are evaluated against the sum constraint n."
-# Pitfalls    (1) Using range(x) instead of range(x+1) fails to include the upper bound dimension as required by the problem statement.  (2) Forgetting the sum condition i+j+k != n results in including invalid coordinates in the final output.
+# Submitted   2026-10-23, 01:53 a.m.
 # ──────────────────────────────────────────────────
 
 
