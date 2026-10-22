@@ -6,13 +6,7 @@
 # Platform    HackerRank
 # Language    pypy3
 # Status      Accepted
-# Submitted   2026-10-23, 02:01 a.m.
-# Technique   single-pass-two-variable-tracking
-# Time        O(n)
-# Space       O(1)
-# Insight     The algorithm maintains the two largest distinct values encountered so far by updating the second-highest score only when a new score is strictly between the current first and second maximums.
-# Interview   Before: "I would sort the list and pick the second to last element." After: "Sorting takes O(n log n) time, but we can achieve O(n) time by tracking the two largest distinct values in a single pass, which handles duplicate maximums correctly."
-# Pitfalls    (1) Failing to handle duplicate maximum scores by using a simple sort and index approach.  (2) Initializing tracking variables to zero instead of negative infinity, which fails if all input scores are negative.
+# Submitted   2026-10-23, 02:02 a.m.
 # ──────────────────────────────────────────────────
 
 if __name__ == '__main__':
