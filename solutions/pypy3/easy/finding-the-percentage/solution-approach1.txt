@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-24, 04:39 a.m.
+# Technique   dictionary-mapping-and-formatting
+# Time        O(N * M)
+# Space       O(N * M)
+# Insight     The implementation maps student names to lists of floating-point scores in a dictionary and calculates the average by dividing the sum of the queried list by a fixed constant.
+# Interview   Before: "I would iterate through the list and calculate the average manually." After: "Using a dictionary provides O(1) average lookup time, and the f-string formatting ensures the required two-decimal precision, resulting in O(N * M) total time complexity where N is the number of students and M is the number of scores."
+# Pitfalls    (1) The code assumes exactly three scores per student by dividing by 3, which fails if the input contains a different number of marks.  (2) Using a hardcoded divisor instead of len(scores) violates the requirement to handle variable-length mark arrays.
 # ──────────────────────────────────────────────────
 
 if __name__ == '__main__':
