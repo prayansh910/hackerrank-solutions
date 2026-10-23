@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-24, 05:13 a.m.
+# Technique   geometric-series-arithmetic-construction
+# Time        O(N)
+# Space       O(1)
+# Insight     The code constructs the repeating digit pattern by multiplying the loop index by a geometric series sum represented as (10^i - 1) / 9.
+# Interview   Before: "How would you print this pattern without string conversion?" After: "By using the geometric series formula (10^i - 1) / 9, we generate the repeating digit sequence arithmetically in O(N) time, satisfying the constraint to avoid string operations entirely."
+# Pitfalls    (1) Using string multiplication or conversion violates the problem constraint and results in a score of zero.  (2) Incorrectly calculating the geometric series sum leads to integer overflow or incorrect digit patterns for N > 9.  (3) Misinterpreting the range(1, int(input())) loop bounds causes the output to miss the final row of the triangle.
 # ──────────────────────────────────────────────────
 
 for i in range(1,int(input())):
