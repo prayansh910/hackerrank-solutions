@@ -1,0 +1,13 @@
+# ──────────────────────────────────────────────────
+# Link        https://www.hackerrank.com/challenges/python-quest-1/problem?isFullScreen=true
+# Problem     Triangle Quest
+# Difficulty  Medium
+# Subdomain   Math
+# Platform    HackerRank
+# Language    pypy3
+# Status      Accepted
+# Submitted   2026-10-24, 05:13 a.m.
+# ──────────────────────────────────────────────────
+
+for i in range(1,int(input())):
+    print(i*((10**i)-1)//9)
