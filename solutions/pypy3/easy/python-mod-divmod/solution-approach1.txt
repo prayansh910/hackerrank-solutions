@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-24, 04:46 a.m.
+# Technique   built-in-divmod-function
+# Time        O(1)
+# Space       O(1)
+# Insight     The solution utilizes Python's native integer division, modulo operator, and the divmod function to compute and display the quotient and remainder of two integers.
+# Interview   Before: "How would you compute the quotient and remainder of two integers simultaneously?" After: "I would use the built-in divmod function, which returns a tuple containing both values in O(1) time, ensuring efficient handling of the division and modulo operations as required by the problem constraints."
+# Pitfalls    (1) Failing to handle potential division by zero errors if the input b is zero.  (2) Confusing the order of arguments in divmod, which expects (a, b) to return (a // b, a % b).
 # ──────────────────────────────────────────────────
 
 # Enter your code here. Read input from STDIN. Print output to STDOUT
