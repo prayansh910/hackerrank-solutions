@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-24, 04:48 a.m.
+# Technique   built-in-modular-exponentiation
+# Time        O(log b)
+# Space       O(1)
+# Insight     The built-in pow function efficiently computes modular exponentiation using binary exponentiation when the third argument is provided.
+# Interview   Before: "How would you calculate a large power modulo m?" After: "I use the built-in pow(a, b, m) function, which performs modular exponentiation in O(log b) time, avoiding the memory overhead of calculating the full power first."
+# Pitfalls    (1) Using math.pow instead of the built-in pow, which returns a float and lacks the modular exponentiation feature.  (2) Providing a negative exponent when the third argument m is present, which violates the built-in function's requirement.
 # ──────────────────────────────────────────────────
 
 # Enter your code here. Read input from STDIN. Print output to STDOUT
