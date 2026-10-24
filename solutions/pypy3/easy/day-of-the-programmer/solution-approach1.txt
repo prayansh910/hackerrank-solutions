@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-25, 02:21 a.m.
+# Technique   conditional-calendar-logic
+# Time        O(1)
+# Space       O(1)
+# Insight     The function determines the 256th day by identifying the leap year status based on the specific calendar system in effect for the given year.
+# Interview   Before: "I would use a library to handle date calculations." After: "Since the rules for leap years change between Julian and Gregorian calendars, I implemented O(1) conditional logic to handle the transition year 1918 and the specific leap year rules for each era."
+# Pitfalls    (1) Failing to handle the unique 1918 transition year where the calendar shift results in a 13-day offset.  (2) Applying Gregorian leap year rules to years before 1918 instead of the Julian rule of simple divisibility by 4.  (3) Incorrectly calculating the day for non-leap years by assuming the 256th day is always the 12th of September.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
